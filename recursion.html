@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Recursion</title>
+  </head>
+  <body>
+    <h2>Inspect elements and interact with console to use functions.</h2>
+    <h3>fibs(n):</h3>
+    <p>
+      takes a number, and returns an array containing that many numbers of the
+      Fibonacci sequence, using a for loop.
+    </p>
+    <h3>fibsRec(n):</h3>
+    <p>
+      takes a number, and returns an array containing that many numbers of the
+      Fibonacci sequence, using Recursion.
+    </p>
+    <h3>mergeSort(arr):</h3>
+    <p>
+      takes an array, and returns a sorted array, using a recursive merge srot
+      methodology.
+    </p>
+    <script>
+      const fibs = (n) => {
+        let result = [0];
+        let a = 1;
+        let b = 1;
+        if (n >= 2) {
+          result.push(a);
+        }
+        if (n >= 3) {
+          result.push(b);
+        }
+        for (let i = 4; i <= n; i++) {
+          let c = a + b;
+          a = b;
+          b = c;
+          result.push(b);
+        }
+        return result;
+      };
+
+      const fibsRec = (n) => {
+        if (n === 1) {
+          return [0];
+        }
+        if (n === 2) {
+          return [0, 1];
+        }
+        return [
+          ...fibsRec(n - 1),
+          fibsRec(n - 1)[n - 2] + fibsRec(n - 1)[n - 3],
+        ];
+      };
+
+      let arr1 = [3, 2, 1, 13, 8, 5, 0, 1];
+      const mergeSort = (arr) => {};
+
+      // console.log(mergeSort(arr1));
+    </script>
+  </body>
+</html>
